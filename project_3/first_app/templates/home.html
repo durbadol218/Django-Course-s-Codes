@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>This is home page!</h1>
+    <h2>Author: {{author}}</h2>
+    <h2>Age: {{age}}</h2>
+    <h2>List: {{lst}}</h2>
+
+    <!--Conditional Statement-->
+    {% comment %} {% if age>= 20 %}
+    <h4>You'll get driving license.</h4>
+    {% elif age >=10 and <= 19 %}
+    <h4>You'll not get driving license.</h4>
+    {% else %}
+    <h4>You're a child.</h4>
+    {% endif %} {% endcomment %} 
+    {% if age >= 20 %}
+        <h4>You'll get driving license.</h4>
+    {% elif age >= 10 and age <= 19 %}
+        <h4>You'll not get driving license.</h4>
+    {% else %}
+        <h4>You're a child.</h4>
+    {% endif %}
+
+
+    {% comment %} {{ value | join:" - " }} {% endcomment %}
+    {{lst}}
+    <h1>{{ lst | join:" - " }}</h1>
+    
+    <h1>{{birthday | date:'D d M Y'}}</h1>
+
+    <h1>{{ "Python is Fun" | cut:" " }}</h1>
+
+    <h1>{{ value | length}},without space in val!</h1>
+
+    <h1>{{'Happy coding.Python is great language.' | truncatechars:8}}, Uses of truncatechars</h1>
+    
+    <h1>{{'Happy coding.Python is great language.' | truncatewords:2}}, Uses of truncatewords</h1>
+    <!--For Loop-->
+    {% for i in courses %}
+    <h3>{{i.id}} {{i.name}} {{i.fee}}</h3>
+    {% endfor %}
+</body>
+</html>
